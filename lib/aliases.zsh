@@ -21,7 +21,7 @@ then
     alias history='fc -El 1'
 elif [ "$HIST_STAMPS" = "yyyy-mm-dd" ]
 then
-    alias history='fc -il 1'
+    alias history='fc -il -200'
 else
     alias history='fc -l 1'
 fi
