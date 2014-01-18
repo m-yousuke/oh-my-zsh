@@ -35,6 +35,15 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
+# コマンドライン上でコピー＆ペーストを可能にする
+pbcopy-buffer(){ 
+    print -rn $BUFFER | pbcopy
+    zle -M "pbcopy: ${BUFFER}" 
+}
+
+zle -N pbcopy-buffer
+bindkey '^x^p' pbcopy-buffer
+
 # consider emacs keybindings:
 
 #bindkey -e  ## emacs key bindings
